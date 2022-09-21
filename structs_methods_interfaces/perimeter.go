@@ -1,0 +1,9 @@
+package structsmethodsinterfaces
+
+func Perimeter(width, height float64) float64 {
+	return 2 * (width + height)
+}
+
+func Area(width, heigth float64) float64 {
+	return 0
+}
