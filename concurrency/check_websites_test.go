@@ -49,3 +49,7 @@ func BenchmarkCheckWebsites(b *testing.B) {
 		CheckWebsites(slowStubWebsiteChecker, urls)
 	}
 }
+
+func testFunction() string {
+	return "Hello, world"
+}
