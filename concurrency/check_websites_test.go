@@ -51,5 +51,5 @@ func BenchmarkCheckWebsites(b *testing.B) {
 }
 
 func testFunction2() string {
-	return "Hello, kalonji"
+	return "Hello, new name"
 }
