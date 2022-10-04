@@ -50,6 +50,6 @@ func BenchmarkCheckWebsites(b *testing.B) {
 	}
 }
 
-func testFunction() string {
-	return "Hello, world"
+func testFunction2() string {
+	return "Hello, carlos"
 }
