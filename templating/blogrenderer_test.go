@@ -1,9 +1,11 @@
 package blogrenderer_test
 
 import (
-	"blogrenderer"
+	blogrenderer "blogrenderer"
 	"bytes"
 	"testing"
+
+	approvals "github.com/approvals/go-approval-tests"
 )
 
 func TestRender(t *testing.T) {
@@ -17,15 +19,11 @@ func TestRender(t *testing.T) {
 	)
 	t.Run("it converts a single post into HTML", func(t *testing.T) {
 		buf := bytes.Buffer{}
-		err := blogrenderer.Render(&buf, aPost)
 
-		if err != nil {
+		if err := blogrenderer.Render(&buf, aPost); err != nil {
 			t.Fatal(err)
 		}
-		got := buf.String()
-		want := `<h1>hello world</h1>`
-		if got != want {
-			t.Errorf("got '%s' want '%s'", got, want)
-		}
+
+		approvals.VerifyString(t, buf.String())
 	})
 }
